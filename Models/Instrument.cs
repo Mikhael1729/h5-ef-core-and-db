@@ -1,8 +1,7 @@
 namespace BdEntityFramework.Models
 {
-  public class Instrument
+  public class Instrument: Entity
   {
-    public int Id { get; set; }
     public int Name { get; set; }
     public double Price { get; set; }
     public int StudentId { get; set; }

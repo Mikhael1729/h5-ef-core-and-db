@@ -1,8 +1,7 @@
 namespace BdEntityFramework.Models
 {
-  public class SubjectClassroom
+  public class SubjectClassroom : Entity
   {
-    public int Id { get; set; }
     public int SubjectId { get; set; }
     public Subject Subject { get; set; }
     public int ClassroomId { get; set; }

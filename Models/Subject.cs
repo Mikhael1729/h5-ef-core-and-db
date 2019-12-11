@@ -2,9 +2,8 @@ using System;
 
 namespace BdEntityFramework.Models
 {
-  public class Subject
+  public class Subject : Entity
   {
-    public int Id { get; set; }
     public string Name { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
