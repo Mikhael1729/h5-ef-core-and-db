@@ -12,6 +12,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using BdEntityFramework.Data;
+using BdEntityFramework.Data.Services;
+using BdEntityFramework.Data.Repositories;
+using BdEntityFramework.Models;
 
 namespace BdEntityFramework
 {
@@ -27,11 +30,21 @@ namespace BdEntityFramework
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Register SQLServer 
             services.AddDbContext<SchoolDbContext>(options => 
                 options.UseSqlServer(
                     Configuration
                     .GetConnectionString("SchoolDatabase"))
             );
+
+            // Services.
+            services.AddScoped<IRepository<Classroom>, Repository<Classroom>>();
+            services.AddScoped<IRepository<Instrument>, Repository<Instrument>>();
+            services.AddScoped<IRepository<Student>, Repository<Student>>();
+            services.AddScoped<IRepository<Subject>, Repository<Subject>>();
+            services.AddScoped<IRepository<SubjectClassroom>, Repository<SubjectClassroom>>();
+            services.AddScoped<IRepository<Teacher>, Repository<Teacher>>();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
