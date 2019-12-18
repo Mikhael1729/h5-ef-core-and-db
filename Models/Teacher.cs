@@ -4,8 +4,8 @@ namespace BdEntityFramework.Models
 {
   public class Teacher : Entity
   {
-    public string Name { get; set; }
-    public string FirstName { get; set; }
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }
     public List<Subject> Subjects { get; set; }
   }
 }
