@@ -42,8 +42,8 @@ namespace BdEntityFramework.Controllers
       // Update the student properties.
       Student modified = _repository.GetById(id);
       modified.Instrument = student.Instrument;
-      modified.LastName = student.LastName;
-      modified.Name = student.Name;
+      modified.Lastname = student.Lastname;
+      modified.Firstname = student.Firstname;
 
       // Save the changes.
       _repository.Update(modified);
