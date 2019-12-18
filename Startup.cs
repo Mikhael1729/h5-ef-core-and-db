@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using BdEntityFramework.Data;
-using BdEntityFramework.Data.Services;
 using BdEntityFramework.Data.Repositories;
 using BdEntityFramework.Models;
 
