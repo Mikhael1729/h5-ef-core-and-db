@@ -8,11 +8,11 @@ namespace BdEntityFramework.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class StudentController : ControllerBase
+  public class StudentsController : ControllerBase
   {
     IRepository<Student> _repository = null;
 
-    public StudentController(IRepository<Student> repository)
+    public StudentsController(IRepository<Student> repository)
     {
       this._repository = repository;
     }
