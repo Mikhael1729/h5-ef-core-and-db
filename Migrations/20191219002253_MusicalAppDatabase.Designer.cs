@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BdEntityFramework.Migrations
 {
     [DbContext(typeof(SchoolDbContext))]
-    [Migration("20191211223835_SchoolContext")]
-    partial class SchoolContext
+    [Migration("20191219002253_MusicalAppDatabase")]
+    partial class MusicalAppDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,9 +58,9 @@ namespace BdEntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("Firstname");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Lastname");
 
                     b.HasKey("Id");
 
@@ -117,9 +117,9 @@ namespace BdEntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("Firstname");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Lastname");
 
                     b.HasKey("Id");
 
