@@ -21,11 +21,7 @@ namespace BdEntityFramework.Controllers
     // GET api/values
     [HttpGet]
     public ActionResult<IEnumerable<Instrument>> Get() =>
-      _repository
-        .GetAll()
-        .AsQueryable()
-        .Include(instrument => instrument.Student)
-        .ToList();
+      _repository.GetAll().ToList();
 
     // GET api/values/5
     [HttpGet("{id}")]
