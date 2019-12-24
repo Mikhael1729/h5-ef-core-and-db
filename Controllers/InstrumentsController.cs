@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using BdEntityFramework.Data.Repositories;
 using BdEntityFramework.Models;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace BdEntityFramework.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api/instruments")]
   [ApiController]
   public class InstrumentsControler : ControllerBase
   {
@@ -20,7 +21,11 @@ namespace BdEntityFramework.Controllers
     // GET api/values
     [HttpGet]
     public ActionResult<IEnumerable<Instrument>> Get() =>
-      _repository.GetAll().ToList();
+      _repository
+        .GetAll()
+        .AsQueryable()
+        .Include(instrument => instrument.Student)
+        .ToList();
 
     // GET api/values/5
     [HttpGet("{id}")]
